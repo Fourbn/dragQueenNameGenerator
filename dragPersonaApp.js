@@ -17,6 +17,9 @@
 
 //Stretch Goals
 //0. ERROR FIXING: pass an error to the user if they try to enter in anything that is not a letter
+//DONE
+//0.2 Refactor JS to allow for random picking of a name within the array
+
 //1. Generate a drag house name based on the users age
 //2. Generate a song to perform for their debut performance based on the users SOMETHING
 //3. Include a link to the lyrics of the song so they can start practicing
