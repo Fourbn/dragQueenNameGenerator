@@ -1,0 +1,30 @@
+main {
+   background: pink;
+   height: 100vh;
+}
+
+h1 {
+   text-align: center;
+   width: 100%;
+   text-transform: uppercase;
+   padding-top: 40px;
+}
+
+form {
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: space-between;
+
+   input {
+      width: calc(50% - 40px);
+      margin: 40px 0;
+      padding: 15px;
+   }
+
+   button {
+      background: peachpuff;
+      border: 2px solid rebeccapurple;
+      margin: 0 auto;
+      padding: 15px 30px;
+   }
+}
