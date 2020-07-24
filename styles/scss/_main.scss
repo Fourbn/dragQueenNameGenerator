@@ -10,14 +10,13 @@ main {
 h1 {
    @include fontTypography(4rem, $headerFont, $accentPink);
    background-color: $accentBlue;
-   border: 4px solid $accentPink;
+   border: 2px solid $accentPink;
    border-radius: 20px;
    text-shadow: 2px 2px $accentDarkPurp;
    text-align: center;
    width: 100%;
    text-transform: uppercase;
    padding: 20px;
-   // margin-top: 20px;
    box-shadow: 5px 5px;
 }
 
@@ -33,9 +32,10 @@ form {
    input {
       @include fontTypography(2.5rem, $bodyFont, $bodyColour);
       width: calc(50% - 40px);
-      margin: 40px 0;
+      min-width: 300px;
+      margin: 40px 0px;
       padding: 30px 15px;
-      border: 3px solid $primaryBackground;
+      border: 3px solid white;
       border-radius: 20px;
       box-shadow: 3px 3px $accentPink;
       text-align: center;
@@ -51,6 +51,8 @@ form {
       padding: 15px 30px;
       box-shadow: 3px 3px $accentPink;
       transition: all .2s;
+      width: 100%;
+      max-width: 300px;
 
       &:hover,
       &:focus {

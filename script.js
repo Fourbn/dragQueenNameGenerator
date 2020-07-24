@@ -131,7 +131,7 @@ dragApp.displayResults = (firstD, lastD, house) => {
    <div class="displayBox">
       <p>Ladies and gentleman please welcome to the stage:</p>
       <h2>${firstD} ${lastD}</h2>
-      <p>from the legendary House of ${house}!</p>
+      <p>from the legendary <span class="dragHouse">House of ${house}!</span></p>
    </div>
    `
    $('.results').html(displayHTML);
