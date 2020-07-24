@@ -61,8 +61,20 @@ dragApp.lastNames = {
    z: ['zara']
 }
 
+dragApp.house = [
+   'Snack',
+   'The Drag Queen',
+   'Davenport',
+   'Velour',
+   'Dolezal',
+   'Edwards',
+   'O\'Hara',
+   'Haunt',
+   'Filth',
+]
+
 //helper function
-dragApp.randomNumber = (array) => {
+dragApp.randomIndex = (array) => {
    const index = Math.floor(Math.random() * array.length);
    //this return allows the randomNumber() to push out a result when using this function within a variable
    return array[index]
@@ -105,19 +117,21 @@ dragApp.errorCatch = (userFirst, userLast) => {
 dragApp.pullDragName = (userFirst, userLast) => {
 
    // using the array of potential drag names (matched to the users intials), find a random index within that array and save to the variable
-   const dragFirst = dragApp.randomNumber(dragApp.firstNames[userFirst])
-   const dragLast = dragApp.randomNumber(dragApp.lastNames[userLast])
+   const dragFirst = dragApp.randomIndex(dragApp.firstNames[userFirst])
+   const dragLast = dragApp.randomIndex(dragApp.lastNames[userLast])
+   const house = dragApp.randomIndex(dragApp.house)
 
    // display the results of the random drag name 
-   dragApp.displayResults(dragFirst, dragLast);
+   dragApp.displayResults(dragFirst, dragLast, house);
 }
 
 //display the drag name in a string to the user
-dragApp.displayResults = (firstD, lastD) => {
+dragApp.displayResults = (firstD, lastD, house) => {
    const displayHTML = `
    <div class="displayBox">
       <p>Ladies and gentleman please welcome to the stage:</p>
       <h2>${firstD} ${lastD}</h2>
+      <p>from the legendary House of ${house}!</p>
    </div>
    `
    $('.results').html(displayHTML);
