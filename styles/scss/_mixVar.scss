@@ -14,9 +14,10 @@ $bodyFont: 'Source Sans Pro', sans-serif;
 $bodyColour: #190920;
 $primaryBackground: #FFE5FF;
 $secondaryBackground: #ECBDE4;
-$accentColour: #98e2f8;
-$accentFont: #f70cc8;
-$accentBackground: #350052;
+$accentBlue: #98e2f8;
+$accentPink: #f70cc8;
+$accentDarkPurp: #350052;
+$warning: #f10e6d;
 
 @mixin fontTypography($sizeValue, $family, $colour) {
    font-size: $sizeValue;
@@ -29,9 +30,9 @@ $accentBackground: #350052;
    font-family: $bodyFont;
    font-size: 1.5rem;
    font-weight: 700;
-   color: $accentBackground;
-   background-color: $accentColour;
-   border: 2px solid $accentColour;
+   color: $accentDarkPurp;
+   background-color: $accentBlue;
+   border: 2px solid $accentBlue;
    border-radius: 10px;
    cursor: pointer;
 }

@@ -12,27 +12,27 @@
       width: 100%;
 
       p {
-         @include fontTypography(2rem, $headerFont, $accentBackground);
-         width: 60%;
+         @include fontTypography(2rem, $headerFont, $accentDarkPurp);
+         width: 70%;
          margin-bottom: 20px;
          text-shadow: 2px 2px $bodyFont;
       }
 
       h2 {
-         @include fontTypography(4rem, $headerFont, $accentFont);
+         @include fontTypography(4rem, $headerFont, $accentPink);
          text-transform: uppercase;
-         text-shadow: 2px 2px $accentBackground;
+         text-shadow: 1px 1px $accentDarkPurp;
       }
 
-      .elon {
-         font-size: 4rem;
-         display: block;
-         color: $accentFont;
-         text-shadow: 2px 2px $bodyColour;
+      .elon,
+      .warning {
+         font-size: 2.5rem;
       }
 
       .warning {
-         //need some underline and different text colour here
+         color: $warning;
+         text-shadow: 1px 1px $accentDarkPurp;
+         text-decoration: underline;
       }
    }
 }

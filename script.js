@@ -87,7 +87,8 @@ dragApp.eventListeners = () => {
 dragApp.errorCatch = (userFirst, userLast) => {
    const errorMessage = `
    <div class="displayBox">
-      <p class="errorMessage"> Gurrrrl, unless your name is <span class="elon">X Æ A-12</span> you need to <span class="warning">use regular letters only.</span> Sorry Elon!</h2>
+      <p class="errorMessage"> You think you're clever don't you!</p>
+      <p>Even if your name is <span class="elon">X Æ A-12,</span> stick to <span class="warning">the alphabet.</span></h2>
    </div>
    `
 

@@ -303,6 +303,8 @@ form input {
   padding: 30px 15px;
   border: 3px solid #FFE5FF;
   border-radius: 20px;
+  -webkit-box-shadow: 3px 3px #f70cc8;
+          box-shadow: 3px 3px #f70cc8;
   text-align: center;
 }
 
@@ -321,12 +323,18 @@ form button {
   cursor: pointer;
   margin: 0 auto;
   padding: 15px 30px;
+  -webkit-box-shadow: 3px 3px #f70cc8;
+          box-shadow: 3px 3px #f70cc8;
+  -webkit-transition: all .2s;
+  transition: all .2s;
 }
 
 form button:hover, form button:focus {
   background-color: #350052;
   color: #98e2f8;
   border: 2px solid #350052;
+  -webkit-transition: all .2s;
+  transition: all .2s;
 }
 
 .results {
@@ -358,7 +366,7 @@ form button:hover, form button:focus {
   font-family: "Racing Sans One", cursive;
   font-weight: 400;
   color: #350052;
-  width: 60%;
+  width: 70%;
   margin-bottom: 20px;
   text-shadow: 2px 2px "Source Sans Pro", sans-serif;
 }
@@ -369,12 +377,16 @@ form button:hover, form button:focus {
   font-weight: 400;
   color: #f70cc8;
   text-transform: uppercase;
-  text-shadow: 2px 2px #350052;
+  text-shadow: 1px 1px #350052;
 }
 
-.results .displayBox .elon {
-  font-size: 4rem;
-  display: block;
-  color: #f70cc8;
-  text-shadow: 2px 2px #190920;
+.results .displayBox .elon,
+.results .displayBox .warning {
+  font-size: 2.5rem;
+}
+
+.results .displayBox .warning {
+  color: #f10e6d;
+  text-shadow: 1px 1px #350052;
+  text-decoration: underline;
 }
