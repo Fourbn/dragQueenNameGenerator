@@ -1,0 +1,39 @@
+//  font-family: 'Racing Sans One', cursive;
+//  font-family: 'Source Sans Pro', sans-serif;
+
+// Russian Violet: #350052
+// Pink Lace: #FFE5FF
+// Shocking Pink: #E33BC1
+// Plum Web: #ECBDE4
+// Sky Blue: #87D9F3
+// Black: #190920
+
+$headerFont: 'Racing Sans One', cursive;
+$bodyFont: 'Source Sans Pro', sans-serif;
+
+$bodyColour: #190920;
+$primaryBackground: #FFE5FF;
+$secondaryBackground: #ECBDE4;
+$accentColour: #98e2f8;
+$accentFont: #f70cc8;
+$accentBackground: #350052;
+
+@mixin fontTypography($sizeValue, $family, $colour) {
+   font-size: $sizeValue;
+   font-family: $family;
+   font-weight: 400;
+   color: $colour;
+}
+
+@mixin button() {
+   font-family: $bodyFont;
+   font-size: 1.5rem;
+   font-weight: 700;
+   color: $accentBackground;
+   background-color: $accentColour;
+   border: 2px solid $accentColour;
+   border-radius: 10px;
+   cursor: pointer;
+}
+
+

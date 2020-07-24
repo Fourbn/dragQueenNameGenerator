@@ -85,7 +85,11 @@ dragApp.eventListeners = () => {
 // user inputs their first and last name into two separate inputs and then submits the form
 // ERROR FIXING: ensure that both inputs have at least one letter in them before submitting
 dragApp.errorCatch = (userFirst, userLast) => {
-   const errorMessage = `<h2> Gurrrrl, unless your name is X Æ A-12, you're guna need to use regular letters. Sorry Elon!</h2>`
+   const errorMessage = `
+   <div class="displayBox">
+      <p class="errorMessage"> Gurrrrl, unless your name is <span class="elon">X Æ A-12</span> you need to <span class="warning">use regular letters only.</span> Sorry Elon!</h2>
+   </div>
+   `
 
    //the display function only goes through if the initials of both inputs matches one of the keys in the object, otherwise it spits out the error message
    if (dragApp.firstNames[userFirst] && dragApp.lastNames[userLast]) {
@@ -110,8 +114,10 @@ dragApp.pullDragName = (userFirst, userLast) => {
 //display the drag name in a string to the user
 dragApp.displayResults = (firstD, lastD) => {
    const displayHTML = `
-   <h2>Ladies and Gentleman please welcome to the stage:</h2>
-   <h2>${firstD} ${lastD}</h2>
+   <div class="displayBox">
+      <p>Ladies and gentleman please welcome to the stage:</p>
+      <h2>${firstD} ${lastD}</h2>
+   </div>
    `
    $('.results').html(displayHTML);
 }
