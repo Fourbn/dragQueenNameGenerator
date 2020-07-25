@@ -97,7 +97,13 @@ dragApp.eventListeners = () => {
 
    $('.results').on('click', '#randomize', function(e){
       e.preventDefault();
-      dragApp.pullDragName(dragApp.firstInitial, dragApp.lastInitial)
+      dragApp.pullDragName(dragApp.firstInitial, dragApp.lastInitial);
+   })
+
+   $('.results').on('click', '#refresh', function(e){
+      e.preventDefault();
+      dragApp.selectedHouse = []
+      $('.results').removeClass('resultsSlide');
    })
 }
 
@@ -154,7 +160,7 @@ dragApp.displayResults = (firstD, lastD, house) => {
       <p>from the legendary <span class="dragHouse">House of ${house}!</span></p>
       <form action="" class="resultsForm" name="resultsForm">
          <button class="submitButton" id="randomize">New Name!</button>
-         <button class="submitButton" id="refresh">Refresh</button>
+         <button class="submitButton" id="refresh">Try Again</button>
       </form>
    </div>
    `

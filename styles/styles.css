@@ -349,6 +349,10 @@ form input:focus {
   top: 0;
   left: -100%;
   right: 100%;
+  -webkit-transition: all .5s;
+  transition: all .5s;
+  -webkit-transition-timing-function: cubic-bezier(0.65, -0.33, 0.44, 1.46);
+          transition-timing-function: cubic-bezier(0.65, -0.33, 0.44, 1.46);
 }
 
 .results .displayBox {
