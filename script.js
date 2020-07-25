@@ -96,9 +96,7 @@ dragApp.eventListeners = () => {
    })
 
    $('.results').on('click', 'button', function(){
-      console.log('clicked!')
-      console.log(dragApp.selectedHouse)
-      dragApp.pullDragName(dragApp.firstInitial, dragApp.lastInitial, dragApp.selectedHouse)
+      dragApp.pullDragName(dragApp.firstInitial, dragApp.lastInitial)
    })
 }
 
@@ -126,15 +124,26 @@ dragApp.pullDragName = (userFirst, userLast) => {
    // using the array of potential drag names (matched to the users intials), find a random index within that array and save to the variable
    const dragFirst = dragApp.randomIndex(dragApp.firstNames[userFirst])
    const dragLast = dragApp.randomIndex(dragApp.lastNames[userLast])
-   const selectedHouse = dragApp.randomIndex(dragApp.house)
+   const dragHouse = dragApp.pullDragHouse()
    
    // display the results of the random drag name 
-   dragApp.displayResults(dragFirst, dragLast, selectedHouse);
+   dragApp.displayResults(dragFirst, dragLast, dragHouse);
 }
 
 // write a separate drag house randomizer function
 // pulls a random drag house and stores it
-// also checks to see if a random house has already been stored. if not: store a random house. if one is already stored, use the stored house name instead
+dragApp.selectedHouse = []
+dragApp.pullDragHouse = () => {
+   // checks to see if a random house has already been stored. if not: store a random house. if one is already stored, use the stored house name instead
+   if (dragApp.selectedHouse.length === 0) {
+      dragApp.selectedHouse.push(dragApp.randomIndex(dragApp.house))
+      return dragApp.selectedHouse;
+   } else {
+      console.log('else function')
+      return dragApp.selectedHouse;
+   }
+}
+
 
 //display the drag name in a string to the user
 dragApp.displayResults = (firstD, lastD, house) => {
