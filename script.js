@@ -164,7 +164,7 @@ dragApp.displayResults = (firstD, lastD, house) => {
       <h2>${firstD} ${lastD}</h2>
       <p>from the legendary <span class="dragHouse">House of ${house}!</span></p>
       <form action="" class="resultsForm" name="resultsForm">
-         <button class="submitButton" id="randomize">New Name!</button>
+         <button class="submitButton randomize" id="randomize">New Name!</button>
          <button class="submitButton" id="refresh">Try Again</button>
       </form>
    </div>

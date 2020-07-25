@@ -254,8 +254,8 @@ body {
 }
 
 main {
-  height: 100vh;
-  padding-top: 40px;
+  min-height: 100vh;
+  padding: 40px 0;
 }
 
 .submitButton {
@@ -357,10 +357,10 @@ form input:focus {
   width: 100vw;
   position: absolute;
   top: 0;
-  left: -100%;
-  right: 100%;
-  -webkit-transition: all .5s;
-  transition: all .5s;
+  left: -120%;
+  right: 120%;
+  -webkit-transition: left .5s, right .5s;
+  transition: left .5s, right .5s;
   -webkit-transition-timing-function: cubic-bezier(0.65, -0.33, 0.44, 1.46);
           transition-timing-function: cubic-bezier(0.65, -0.33, 0.44, 1.46);
 }
@@ -387,7 +387,7 @@ form input:focus {
   text-align: center;
   height: 100%;
   width: 100%;
-  padding: 40px 20px;
+  padding: 25px;
 }
 
 .results .displayBox p {
@@ -424,12 +424,13 @@ form input:focus {
 }
 
 .results .displayBox .dragHouse {
+  display: inline-block;
   color: #98e2f8;
   background-color: #350052;
   border-radius: 20px;
   width: 100%;
-  padding: 0 90px;
-  margin-top: 5px;
+  margin: 5px auto;
+  padding: 0 25px;
 }
 
 .results .resultsForm {
@@ -438,15 +439,104 @@ form input:focus {
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
   width: 100%;
   margin-top: 40px;
+}
+
+.results .resultsForm .submitButton {
+  margin: 20px 10px;
 }
 
 .resultsSlide {
   left: 0;
   right: 0;
-  -webkit-transition: all .5s;
-  transition: all .5s;
+  -webkit-transition: left .5s, right .5s;
+  transition: left .5s, right .5s;
   -webkit-transition-timing-function: cubic-bezier(0.65, -0.33, 0.44, 1.46);
           transition-timing-function: cubic-bezier(0.65, -0.33, 0.44, 1.46);
+}
+
+@media (max-width: 885px) {
+  h1 {
+    font-size: 3rem;
+  }
+}
+
+@media (max-width: 750px) {
+  .userInputs input {
+    width: 100%;
+    padding: 15px;
+  }
+  .userInputs input:nth-child(2) {
+    margin-bottom: 0;
+  }
+  .submitButton {
+    max-width: 100%;
+  }
+  .results .resultsForm .submitButton {
+    margin: 20px 0;
+  }
+}
+
+@media (max-width: 630px) {
+  .results .displayBox p {
+    font-size: 1.5rem;
+  }
+  .results .displayBox h2 {
+    font-size: 3rem;
+  }
+  .results .displayBox .elon, .results .displayBox .warning, .results .displayBox .dragHouse {
+    font-size: 1.75rem;
+  }
+  .results .displayBox .dragHouse {
+    border-radius: 10px;
+  }
+  .results .resultsForm {
+    margin-top: 20px;
+  }
+  .submitButton {
+    font-size: 1.25rem;
+    padding: 10px;
+  }
+  form input {
+    font-size: 1.75rem;
+  }
+}
+
+@media (max-width: 402px) {
+  h1 {
+    font-size: 2rem;
+    text-shadow: 1px 1px #350052;
+  }
+  .results {
+    padding: 20px;
+  }
+  .results .displayBox {
+    padding: 10px;
+  }
+  .results .displayBox p {
+    font-size: 1rem;
+  }
+  .results .displayBox h2 {
+    font-size: 2.5rem;
+  }
+  .results .displayBox .elon, .results .displayBox .warning, .results .displayBox .dragHouse {
+    font-size: 1.25rem;
+  }
+  .submitButton {
+    font-size: .95rem;
+  }
+  form input {
+    font-size: 1.25rem;
+    min-width: 200px;
+  }
+}
+
+@media (max-width: 320px) {
+  .userInputs input {
+    padding: 5px;
+  }
 }

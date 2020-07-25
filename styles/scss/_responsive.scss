@@ -1,0 +1,111 @@
+// h1 font resize
+@media (max-width: 885px) {
+   h1 {
+      font-size: 3rem;
+   }
+}
+
+// user form input sizing 
+// button width resizing to 100%
+@media (max-width: 750px) {
+   .userInputs {
+      
+      input {
+         width: 100%;
+         padding: 15px;
+
+         &:nth-child(2) {
+            margin-bottom: 0;
+         }
+      }
+   }
+
+   .submitButton {
+      max-width: 100%;
+   }
+
+   .results .resultsForm .submitButton {
+      margin: 20px 0;
+   }
+}
+
+// site font resize 
+@media (max-width: 630px) {
+   .results {
+      .displayBox {
+         p {
+            font-size: 1.5rem;
+         }
+   
+         h2 {
+            font-size: 3rem;
+         }
+   
+         .elon, .warning, .dragHouse {
+            font-size: 1.75rem;
+         }
+   
+         .dragHouse {
+            border-radius: 10px;
+         }
+      }
+      
+      .resultsForm {
+         margin-top: 20px;
+      }
+   }
+   
+   .submitButton {
+      font-size: 1.25rem;
+      padding: 10px;
+   }
+
+   form input {
+      font-size: 1.75rem;
+   }
+}
+
+// final mobile font resize
+// padding adjustment to push to edge of screen
+@media (max-width: 402px) {
+   h1 {
+      font-size: 2rem;
+      text-shadow: 1px 1px $accentDarkPurp;
+   }
+
+   .results {
+      padding: 20px;
+   }
+
+   .results .displayBox {
+      padding: 10px;
+
+      p {
+         font-size: 1rem;
+      }
+
+      h2 {
+         font-size: 2.5rem;
+      }
+
+      .elon, .warning, .dragHouse {
+         font-size: 1.25rem;
+      }
+   }
+   .submitButton {
+      font-size: .95rem;
+   }
+
+   form input {
+      font-size: 1.25rem;
+      min-width: 200px;
+   }
+}
+
+// fix a small issue with the form poking out from behind the results page
+@media (max-width: 320px) {
+   .userInputs input {
+      padding: 5px;
+   }
+}
+
