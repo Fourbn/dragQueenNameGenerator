@@ -95,7 +95,8 @@ dragApp.eventListeners = () => {
       dragApp.errorCatch(dragApp.firstInitial, dragApp.lastInitial);
    })
 
-   $('.results').on('click', 'button', function(){
+   $('.results').on('click', '#randomize', function(e){
+      e.preventDefault();
       dragApp.pullDragName(dragApp.firstInitial, dragApp.lastInitial)
    })
 }
@@ -139,7 +140,6 @@ dragApp.pullDragHouse = () => {
       dragApp.selectedHouse.push(dragApp.randomIndex(dragApp.house))
       return dragApp.selectedHouse;
    } else {
-      console.log('else function')
       return dragApp.selectedHouse;
    }
 }
@@ -152,10 +152,14 @@ dragApp.displayResults = (firstD, lastD, house) => {
       <p>Ladies and gentleman please welcome to the stage:</p>
       <h2>${firstD} ${lastD}</h2>
       <p>from the legendary <span class="dragHouse">House of ${house}!</span></p>
-      <button class="submitButton">Randomize</button>
+      <form action="" class="resultsForm" name="resultsForm">
+         <button class="submitButton" id="randomize">New Name!</button>
+         <button class="submitButton" id="refresh">Refresh</button>
+      </form>
    </div>
    `
    $('.results').html(displayHTML);
+   $('.results').addClass('resultsSlide')
 }
 
 

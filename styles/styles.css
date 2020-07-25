@@ -341,7 +341,14 @@ form input:focus {
 }
 
 .results {
-  padding: 40px 0px;
+  background-color: #FFE5FF;
+  padding: 40px;
+  min-height: 100vh;
+  width: 100vw;
+  position: absolute;
+  top: 0;
+  left: -100%;
+  right: 100%;
 }
 
 .results .displayBox {
@@ -411,6 +418,21 @@ form input:focus {
   margin-top: 5px;
 }
 
-.results .displayBox button {
+.results .resultsForm {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  width: 100%;
   margin-top: 40px;
+}
+
+.resultsSlide {
+  left: 0;
+  right: 0;
+  -webkit-transition: all .5s;
+  transition: all .5s;
+  -webkit-transition-timing-function: cubic-bezier(0.65, -0.33, 0.44, 1.46);
+          transition-timing-function: cubic-bezier(0.65, -0.33, 0.44, 1.46);
 }
