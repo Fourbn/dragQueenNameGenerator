@@ -115,6 +115,9 @@ dragApp.errorCatch = (userFirst, userLast) => {
    <div class="displayBox">
       <p class="errorMessage"> You think you're clever don't you!</p>
       <p>Even if your name is <span class="elon">X Æ A-12,</span> stick to <span class="warning">the alphabet.</span></h2>
+      <form action="" class="resultsForm" name="resultsForm">
+         <button class="submitButton" id="refresh">Do Better</button>
+      </form>
    </div>
    `
 
@@ -124,6 +127,7 @@ dragApp.errorCatch = (userFirst, userLast) => {
       dragApp.pullDragName(userFirst, userLast, dragApp.house)
    } else {
       $('.results').html(errorMessage)
+      $('.results').addClass('resultsSlide')
    }
 }
 
