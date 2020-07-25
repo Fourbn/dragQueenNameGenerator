@@ -7,6 +7,25 @@ main {
    padding-top: 40px;
 }
 
+
+.submitButton {
+   @include button();
+   margin: 0 auto;
+   padding: 15px 30px;
+   box-shadow: 3px 3px $accentPink;
+   transition: all .2s;
+   width: 100%;
+   max-width: 300px;
+
+   &:hover,
+   &:focus {
+      background-color: $accentDarkPurp;
+      color: $accentBlue;
+      border: 2px solid $accentDarkPurp;
+      transition: all .2s;
+   }
+}
+
 h1 {
    @include fontTypography(4rem, $headerFont, $accentPink);
    background-color: $accentBlue;
@@ -42,24 +61,6 @@ form {
 
       &:focus {
          border: 3px solid $accentPink;
-      }
-   }
-
-   button {
-      @include button();
-      margin: 0 auto;
-      padding: 15px 30px;
-      box-shadow: 3px 3px $accentPink;
-      transition: all .2s;
-      width: 100%;
-      max-width: 300px;
-
-      &:hover,
-      &:focus {
-         background-color: $accentDarkPurp;
-         color: $accentBlue;
-         border: 2px solid $accentDarkPurp;
-         transition: all .2s;
       }
    }
 }

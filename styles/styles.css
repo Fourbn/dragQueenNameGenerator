@@ -258,6 +258,33 @@ main {
   padding-top: 40px;
 }
 
+.submitButton {
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #350052;
+  background-color: #98e2f8;
+  border: 2px solid #98e2f8;
+  border-radius: 10px;
+  cursor: pointer;
+  margin: 0 auto;
+  padding: 15px 30px;
+  -webkit-box-shadow: 3px 3px #f70cc8;
+          box-shadow: 3px 3px #f70cc8;
+  -webkit-transition: all .2s;
+  transition: all .2s;
+  width: 100%;
+  max-width: 300px;
+}
+
+.submitButton:hover, .submitButton:focus {
+  background-color: #350052;
+  color: #98e2f8;
+  border: 2px solid #350052;
+  -webkit-transition: all .2s;
+  transition: all .2s;
+}
+
 h1 {
   font-size: 4rem;
   font-family: "Racing Sans One", cursive;
@@ -311,33 +338,6 @@ form input {
 
 form input:focus {
   border: 3px solid #f70cc8;
-}
-
-form button {
-  font-family: "Source Sans Pro", sans-serif;
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: #350052;
-  background-color: #98e2f8;
-  border: 2px solid #98e2f8;
-  border-radius: 10px;
-  cursor: pointer;
-  margin: 0 auto;
-  padding: 15px 30px;
-  -webkit-box-shadow: 3px 3px #f70cc8;
-          box-shadow: 3px 3px #f70cc8;
-  -webkit-transition: all .2s;
-  transition: all .2s;
-  width: 100%;
-  max-width: 300px;
-}
-
-form button:hover, form button:focus {
-  background-color: #350052;
-  color: #98e2f8;
-  border: 2px solid #350052;
-  -webkit-transition: all .2s;
-  transition: all .2s;
 }
 
 .results {
@@ -409,4 +409,8 @@ form button:hover, form button:focus {
   width: 100%;
   padding: 0 90px;
   margin-top: 5px;
+}
+
+.results .displayBox button {
+  margin-top: 40px;
 }
