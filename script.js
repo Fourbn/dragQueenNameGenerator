@@ -102,6 +102,7 @@ dragApp.eventListeners = () => {
 
    $('.results').on('click', '#refresh', function(e){
       e.preventDefault();
+      //clears dragHouse for new selection
       dragApp.selectedHouse = []
       $('.results').removeClass('resultsSlide');
    })
