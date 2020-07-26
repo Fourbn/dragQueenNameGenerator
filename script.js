@@ -72,7 +72,8 @@ dragApp.house = [
    'Haunt',
    'Filth',
    'Xtravaganza',
-   'Astrology'
+   'Astrology',
+   'LaBeija'
 ]
 
 //helper function
