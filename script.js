@@ -4,9 +4,9 @@ const dragApp = {}
 // create two objects, 1 for drag first names + 1 for drag last names 
 dragApp.firstNames = {
    a: ['amber', 'anita', 'alicia', 'arizona'],
-   b: ['barbie', 'betty', 'baby', 'bon bon'],
-   c: ['cherry', 'celine', 'cher', 'carol'],
-   d: ['diamond', 'danny', 'destiny', 'deborag'],
+   b: ['barbie', 'betty', 'baby', 'bon bon', 'brittney'],
+   c: ['cherry', 'celine', 'cher', 'carol', 'crystal'],
+   d: ['diamond', 'danny', 'destiny', 'deborah'],
    e: ['edna', 'elton', 'elsa', 'egot'],
    f: ['foxy', 'fetta', 'fishy', 'fortuna', 'finessa'],
    g: ['goodie', 'gilda', 'gretta', 'gia'],
@@ -18,17 +18,17 @@ dragApp.firstNames = {
    m: ['mistress', 'miss', 'mariah', 'melon','manny'],
    n: ['naomi', 'nelly', 'nora', 'nina', 'neNe', 'nip'],
    o: ['ornatia', 'olive', 'okra', 'olivia'],
-   p: ['portia', 'pearl', 'pissy', 'penny'],
-   q: ['queen', 'queer', 'quest', 'queefa'],
-   r: ['rosalind', 'radisha', 'RiRi', 'risky'],
+   p: ['portia', 'pearl', 'pissy', 'penny', 'pepper'],
+   q: ['queen', 'queer', 'quest', 'quincy'],
+   r: ['rosalind', 'radisha', 'raspy', 'risky'],
    s: ['sapphire', 'spamela', 'sessy', 'sissy', 'september'],
    t: ['tiffany', 'tina', 'tequila', 'TiTi'],
    u: ['unique', 'uma', 'uppety', 'uta'],
    v: ['venus', 'vladamir', 'veronica', 'vicky'],
    w: ['wynona', 'wisty', 'wiggles', 'whorrid'],
    x: ['xena', 'xtra', 'xtasy', 'XXX'],
-   y: ['yvie', 'yoko', 'yummy', 'yaYa'],
-   z: ['zenisha', 'zoey', 'ZeZe', 'zoom']
+   y: ['yvie', 'yummy', 'yaYa', 'yessa'],
+   z: ['zenheya', 'zoey', 'ZeZe', 'zoom']
 }
 
 dragApp.lastNames = {
@@ -47,17 +47,17 @@ dragApp.lastNames = {
    m: ['mystery', 'morose', 'muumuu', 'marbles', 'marriott hotel', 'mcNugget'],
    n: ['nasty', 'noise', 'nipple', 'norene'],
    o: ['opalence', 'ovah', 'original', 'opposite', 'ore'],
-   p: ['paris', 'popo', 'pistachio', 'pisser', 'pump', 'pickle', 'peas'],
+   p: ['paris', 'pop', 'pistachio', 'pisser', 'pump', 'pickle', 'peas'],
    q: ['quinn', 'quick', 'question mark', 'query'],
    r: ['redd', 'ryan', 'radler', 'roast beef', 'rasputin', 'RESTylane'],
    s: ['sublime', 'steak', 's\'moore', 'saucy', 'simpson', 'seductive', 'snack'],
    t: ['trash', 'tuck', 'taquito', 'turnip', 'turnblatt', 'turner', 'tushy', 'tornado', 'top'],
-   u: ['umbridge', 'umpire', 'upset', 'uwU'],
+   u: ['umbridge', 'untouchable', 'upset', 'uwU'],
    v: ['vanity', 'virgin', 'viper', 'vivacious', 'vibes'],
-   w: ['winter', 'williams', 'werk', 'west', 'whiskers', 'wild'],
+   w: ['winter', 'williams', 'werk', 'west', 'whiskers', 'wild', 'wispy'],
    x: ['xenobia', 'x change', 'x', 'xylophone', 'xtravaganza', 'XOXO'],
    y: ['yaya', 'yeastwood', 'yummy', 'yogurt', 'yikes'],
-   z: ['zara', 'zest', 'zucker', '\'zine']
+   z: ['zara', 'zest', 'zucker', '\'zine', 'zuckerberg']
 }
 
 dragApp.house = [
@@ -71,13 +71,14 @@ dragApp.house = [
    'Haunt',
    'Filth',
    'Xtravaganza',
-   'Astrology'
+   'Astrology',
+   'LaBeija'
 ]
 
-//helper function
+// helper function
 dragApp.randomIndex = (array) => {
    const index = Math.floor(Math.random() * array.length);
-   //this return allows the randomIndex() to push out a result when using this function within a variable
+   // this return allows the randomIndex() to push out a result when using this function within a variable
    return array[index]
 }
 
@@ -88,11 +89,11 @@ dragApp.eventListeners = () => {
    $('form').on('submit', function(e){
       e.preventDefault();
       
-      //store users initials into two variables by taking the entered string, reducing it to one character, and ensuring the character is lower case
+      // store users initials into two variables by taking the entered string, reducing it to one character, and ensuring the character is lower case
       dragApp.firstInitial = $('#firstName').val().charAt(0).toLowerCase();
       dragApp.lastInitial = $('#lastName').val().charAt(0).toLowerCase();
 
-      //pass results through an error catch to ensure user entered inputs properly
+      // pass results through an error catch to ensure user entered inputs properly
       dragApp.errorCatch(dragApp.firstInitial, dragApp.lastInitial);
    })
 
@@ -103,7 +104,7 @@ dragApp.eventListeners = () => {
 
    $('.results').on('click', '#refresh', function(e){
       e.preventDefault();
-      //clears dragHouse for new selection
+      // clears dragHouse for new selection
       dragApp.selectedHouse = []
       $('.results').removeClass('resultsSlide');
    })
@@ -122,7 +123,7 @@ dragApp.errorCatch = (userFirst, userLast) => {
    </div>
    `
 
-   //the display function only goes through if the initials of both inputs matches one of the keys in the object, otherwise it spits out the error message
+   // the display function only goes through if the initials of both inputs matches one of the keys in the object, otherwise it spits out the error message
    if (dragApp.firstNames[userFirst] && dragApp.lastNames[userLast]) {
       // based on users initials, generate a complete drag name
       dragApp.pullDragName(userFirst, userLast, dragApp.house)
@@ -132,7 +133,7 @@ dragApp.errorCatch = (userFirst, userLast) => {
    }
 }
 
-//function to pull one drag name based on first initial from the available options
+// function to pull one drag name based on first initial from the available options
 dragApp.pullDragName = (userFirst, userLast) => {
    // using the array of potential drag names (matched to the users intials), find a random index within that array and save to the variable
    const dragFirst = dragApp.randomIndex(dragApp.firstNames[userFirst])
@@ -156,8 +157,7 @@ dragApp.pullDragHouse = () => {
    }
 }
 
-
-//display the drag name in a string to the user
+// display the drag name in a string to the user
 dragApp.displayResults = (firstD, lastD, house) => {
    const displayHTML = `
    <div class="displayBox">
@@ -173,7 +173,6 @@ dragApp.displayResults = (firstD, lastD, house) => {
    $('.results').html(displayHTML);
    $('.results').addClass('resultsSlide')
 }
-
 
 
 dragApp.init = () => {
