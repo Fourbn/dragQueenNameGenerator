@@ -1,7 +1,7 @@
 // Drag Persona Generator App
 const dragApp = {}
 
-// create two arrays, 1 for drag first names + 1 for drag last names 
+// create two objects, 1 for drag first names + 1 for drag last names 
 //    (1 for each letter of the alphabet)
 dragApp.firstNames = {
    a: ['amber', 'anita', 'alicia', 'arizona'],
@@ -75,10 +75,10 @@ dragApp.house = [
    'Astrology'
 ]
 
-//helper function
+// helper function
 dragApp.randomIndex = (array) => {
    const index = Math.floor(Math.random() * array.length);
-   //this return allows the randomIndex() to push out a result when using this function within a variable
+   // this return allows the randomIndex() to push out a result when using this function within a variable
    return array[index]
 }
 
@@ -89,11 +89,11 @@ dragApp.eventListeners = () => {
    $('form').on('submit', function(e){
       e.preventDefault();
       
-      //store users initials into two variables by taking the entered string, reducing it to one character, and ensuring the character is lower case
+      // store users initials into two variables by taking the entered string, reducing it to one character, and ensuring the character is lower case
       dragApp.firstInitial = $('#firstName').val().charAt(0).toLowerCase();
       dragApp.lastInitial = $('#lastName').val().charAt(0).toLowerCase();
 
-      //pass results through an error catch to ensure user entered inputs properly
+      // pass results through an error catch to ensure user entered inputs properly
       dragApp.errorCatch(dragApp.firstInitial, dragApp.lastInitial);
    })
 
@@ -104,7 +104,7 @@ dragApp.eventListeners = () => {
 
    $('.results').on('click', '#refresh', function(e){
       e.preventDefault();
-      //clears dragHouse for new selection
+      // clears dragHouse for new selection
       dragApp.selectedHouse = []
       $('.results').removeClass('resultsSlide');
    })
@@ -123,7 +123,7 @@ dragApp.errorCatch = (userFirst, userLast) => {
    </div>
    `
 
-   //the display function only goes through if the initials of both inputs matches one of the keys in the object, otherwise it spits out the error message
+   // the display function only goes through if the initials of both inputs matches one of the keys in the object, otherwise it spits out the error message
    if (dragApp.firstNames[userFirst] && dragApp.lastNames[userLast]) {
       // based on users initials, generate a complete drag name
       dragApp.pullDragName(userFirst, userLast, dragApp.house)
@@ -133,7 +133,7 @@ dragApp.errorCatch = (userFirst, userLast) => {
    }
 }
 
-//function to pull one drag name based on first initial from the available options
+// function to pull one drag name based on first initial from the available options
 dragApp.pullDragName = (userFirst, userLast) => {
    // using the array of potential drag names (matched to the users intials), find a random index within that array and save to the variable
    const dragFirst = dragApp.randomIndex(dragApp.firstNames[userFirst])
@@ -158,7 +158,7 @@ dragApp.pullDragHouse = () => {
 }
 
 
-//display the drag name in a string to the user
+// display the drag name in a string to the user
 dragApp.displayResults = (firstD, lastD, house) => {
    const displayHTML = `
    <div class="displayBox">
