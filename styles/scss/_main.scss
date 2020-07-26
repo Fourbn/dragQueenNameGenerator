@@ -28,15 +28,34 @@ main {
 
 h1 {
    @include fontTypography(4rem, $headerFont, $accentPink);
+   text-transform: uppercase;
+   text-shadow: 2px 2px $accentDarkPurp;
+}
+
+.title {
    background-color: $accentBlue;
    border: 2px solid $accentPink;
    border-radius: 20px;
-   text-shadow: 2px 2px $accentDarkPurp;
+   box-shadow: 5px 5px $accentPink;
    text-align: center;
    width: 100%;
-   text-transform: uppercase;
    padding: 20px;
-   box-shadow: 5px 5px;
+
+   p {
+      color: $accentDarkPurp;
+      font-size: 1rem;
+      padding: 10px 0;
+      font-weight: 700;
+
+      span {
+         display: inline-block;
+         background: rgba(236, 189, 228, .9);
+         // color: black;
+         padding: 1px 7px;
+         border-radius: 10px;
+         margin-top: 2px;
+      }
+   }
 }
 
 p {

@@ -291,16 +291,34 @@ h1 {
   font-family: "Racing Sans One", cursive;
   font-weight: 400;
   color: #e32bbf;
+  text-transform: uppercase;
+  text-shadow: 2px 2px #350052;
+}
+
+.title {
   background-color: #98e2f8;
   border: 2px solid #e32bbf;
   border-radius: 20px;
-  text-shadow: 2px 2px #350052;
+  -webkit-box-shadow: 5px 5px #e32bbf;
+          box-shadow: 5px 5px #e32bbf;
   text-align: center;
   width: 100%;
-  text-transform: uppercase;
   padding: 20px;
-  -webkit-box-shadow: 5px 5px;
-          box-shadow: 5px 5px;
+}
+
+.title p {
+  color: #350052;
+  font-size: 1rem;
+  padding: 10px 0;
+  font-weight: 700;
+}
+
+.title p span {
+  display: inline-block;
+  background: rgba(236, 189, 228, 0.9);
+  padding: 1px 7px;
+  border-radius: 10px;
+  margin-top: 2px;
 }
 
 p {
