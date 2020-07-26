@@ -250,12 +250,13 @@ img {
 }
 
 body {
-  background-color: #FFE5FF;
+  overflow-x: hidden;
 }
 
 main {
-  min-height: 100vh;
-  padding: 40px 0;
+  background-color: #FFE5FF;
+  min-height: 95vh;
+  padding: 12px 0;
 }
 
 .submitButton {
@@ -318,6 +319,7 @@ form {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  height: 100%;
 }
 
 form input {
@@ -342,9 +344,7 @@ form input:focus {
 
 .results {
   background-color: #FFE5FF;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  display: hidden;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -354,9 +354,9 @@ form input:focus {
           justify-content: center;
   padding: 40px;
   min-height: 100vh;
-  width: 100vw;
+  width: 100%;
   position: absolute;
-  top: 0;
+  bottom: 0;
   left: -120%;
   right: 120%;
   -webkit-transition: left .5s, right .5s;
@@ -446,17 +446,45 @@ form input:focus {
   margin-top: 40px;
 }
 
-.results .resultsForm .submitButton {
+.results .resultsForm button {
   margin: 20px 10px;
 }
 
 .resultsSlide {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   left: 0;
   right: 0;
+  bottom: unset;
+  top: 0;
   -webkit-transition: left .5s, right .5s;
   transition: left .5s, right .5s;
   -webkit-transition-timing-function: cubic-bezier(0.65, -0.33, 0.44, 1.46);
           transition-timing-function: cubic-bezier(0.65, -0.33, 0.44, 1.46);
+}
+
+footer {
+  height: 5vh;
+  width: 100%;
+  text-align: center;
+  background-color: #ECBDE4;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 0 auto;
+  padding: 5px 0;
+}
+
+footer p {
+  font-size: .75rem;
 }
 
 @media (max-width: 885px) {
@@ -497,6 +525,9 @@ form input:focus {
   .results .resultsForm {
     margin-top: 20px;
   }
+  .results .resultsForm .randomize {
+    margin-bottom: 0;
+  }
   .submitButton {
     font-size: 1.25rem;
     padding: 10px;
@@ -521,7 +552,7 @@ form input:focus {
     font-size: 1rem;
   }
   .results .displayBox h2 {
-    font-size: 2.5rem;
+    font-size: 2.25rem;
   }
   .results .displayBox .elon, .results .displayBox .warning, .results .displayBox .dragHouse {
     font-size: 1.25rem;

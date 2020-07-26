@@ -1,8 +1,7 @@
 // Drag Persona Generator App
 const dragApp = {}
 
-// create two arrays, 1 for drag first names + 1 for drag last names 
-//    (1 for each letter of the alphabet)
+// create two objects, 1 for drag first names + 1 for drag last names 
 dragApp.firstNames = {
    a: ['amber', 'anita', 'alicia', 'arizona'],
    b: ['barbie', 'betty', 'baby', 'bon bon'],
@@ -166,8 +165,8 @@ dragApp.displayResults = (firstD, lastD, house) => {
       <h2>${firstD} ${lastD}</h2>
       <p>from the legendary <span class="dragHouse">House of ${house}!</span></p>
       <form action="" class="resultsForm" name="resultsForm">
-         <button class="submitButton randomize" id="randomize">New Name!</button>
-         <button class="submitButton" id="refresh">Try Again</button>
+         <button class="submitButton randomize" id="randomize">New Name</button>
+         <button class="submitButton" id="refresh">Go Back</button>
       </form>
    </div>
    `

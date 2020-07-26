@@ -30,6 +30,7 @@
 }
 
 // site font resize 
+// results buttons closer together
 @media (max-width: 630px) {
    .results {
       .displayBox {
@@ -52,6 +53,10 @@
       
       .resultsForm {
          margin-top: 20px;
+
+         .randomize {
+            margin-bottom: 0;
+         }
       }
    }
    
@@ -85,7 +90,7 @@
       }
 
       h2 {
-         font-size: 2.5rem;
+         font-size: 2.25rem;
       }
 
       .elon, .warning, .dragHouse {

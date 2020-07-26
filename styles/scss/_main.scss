@@ -1,12 +1,12 @@
 body {
-   background-color: $primaryBackground;
+   overflow-x: hidden;
 }
 
 main {
-   min-height: 100vh;
-   padding: 40px 0;
+   background-color: $primaryBackground;
+   min-height: 95vh;
+   padding: 12px 0;
 }
-
 
 .submitButton {
    @include button();
@@ -47,6 +47,7 @@ form {
    display: flex;
    flex-wrap: wrap;
    justify-content: space-between;
+   height: 100%;
 
    input {
       @include fontTypography(2.5rem, $bodyFont, $bodyColour);
