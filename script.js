@@ -21,7 +21,7 @@ dragApp.firstNames = {
    p: ['portia', 'pearl', 'pissy', 'penny', 'pepper'],
    q: ['queen', 'queer', 'quest', 'quincy'],
    r: ['rosalind', 'radisha', 'raspy', 'risky'],
-   s: ['sapphire', 'spamela', 'sessy', 'sissy', 'september'],
+   s: ['sapphire', 'spamela', 'sessy', 'sissy'],
    t: ['tiffany', 'tina', 'tequila', 'TiTi'],
    u: ['unique', 'uma', 'uppety', 'uta'],
    v: ['venus', 'vladamir', 'veronica', 'vicky'],
@@ -75,11 +75,17 @@ dragApp.house = [
    'LaBeija'
 ]
 
-// helper function
+// helper functions
 dragApp.randomIndex = (array) => {
    const index = Math.floor(Math.random() * array.length);
    // this return allows the randomIndex() to push out a result when using this function within a variable
    return array[index]
+}
+   // hide the user form inputs but delay it a slight bit to make it look less janky
+dragApp.delayFormHide = () => {
+   setTimeout(function(){
+      $('.userInputs').addClass('collapse')
+   }, 200)
 }
 
 // event listener on the submit button that stores the users initials
@@ -107,6 +113,7 @@ dragApp.eventListeners = () => {
       // clears dragHouse for new selection
       dragApp.selectedHouse = []
       $('.results').removeClass('resultsSlide');
+      $('.userInputs').removeClass('collapse')
    })
 }
 
@@ -116,20 +123,19 @@ dragApp.errorCatch = (userFirst, userLast) => {
    const errorMessage = `
    <div class="displayBox">
       <p class="errorMessage"> You think you're clever don't you!</p>
-      <p>Even if your name is <span class="elon">X Æ A-12,</span> stick to <span class="warning">the alphabet.</span></h2>
+      <p>Even if your name is <span class="elon">X Æ A-12,</span> stick to <span class="warning" title="Please only use letters when typing in your name.">the alphabet.</span></h2>
       <form action="" class="resultsForm" name="resultsForm">
-         <button class="submitButton" id="refresh">Do Better</button>
+         <button class="submitButton" id="refresh" aria-label="Go back to main screen. Please remove any numbers or characters from your name">Do Better</button>
       </form>
    </div>
    `
-
-   // the display function only goes through if the initials of both inputs matches one of the keys in the object, otherwise it spits out the error message
+   // the display function only goes through if the initials of both inputs matches one of the keys in their respective objects, otherwise it spits out the error message
    if (dragApp.firstNames[userFirst] && dragApp.lastNames[userLast]) {
-      // based on users initials, generate a complete drag name
       dragApp.pullDragName(userFirst, userLast, dragApp.house)
    } else {
       $('.results').html(errorMessage)
       $('.results').addClass('resultsSlide')
+      dragApp.delayFormHide();
    }
 }
 
@@ -144,7 +150,6 @@ dragApp.pullDragName = (userFirst, userLast) => {
    dragApp.displayResults(dragFirst, dragLast, dragHouse);
 }
 
-// write a separate drag house randomizer function
 // pulls a random drag house and stores it
 dragApp.selectedHouse = []
 dragApp.pullDragHouse = () => {
@@ -164,7 +169,7 @@ dragApp.displayResults = (firstD, lastD, house) => {
       <p>Ladies and gentleman please welcome to the stage:</p>
       <h2>${firstD} ${lastD}</h2>
       <p>from the legendary <span class="dragHouse">House of ${house}!</span></p>
-      <form action="" class="resultsForm" name="resultsForm">
+      <form action="" class="resultsForm wrapper" name="resultsForm">
          <button class="submitButton randomize" id="randomize">New Name</button>
          <button class="submitButton" id="refresh">Go Back</button>
       </form>
@@ -172,6 +177,7 @@ dragApp.displayResults = (firstD, lastD, house) => {
    `
    $('.results').html(displayHTML);
    $('.results').addClass('resultsSlide')
+   dragApp.delayFormHide();
 }
 
 

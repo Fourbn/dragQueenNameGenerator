@@ -1,13 +1,13 @@
 // h1 font resize
 @media (max-width: 885px) {
    h1 {
-      font-size: 3rem;
+      font-size: 3.25rem;
    }
 }
 
-// user form input sizing 
-// button width resizing to 100%
-@media (max-width: 750px) {
+// user form inputs size down
+// all buttons width resizing to 100%
+@media (max-width: 775px) {
    .userInputs {
       
       input {
@@ -29,9 +29,13 @@
    }
 }
 
-// site font resize 
-// results buttons closer together
+// site-wide font size down (except h1)
+// results buttons vertically closer together
 @media (max-width: 630px) {
+   .title p {
+      font-size: .9rem;
+   }
+
    .results {
       .displayBox {
          p {
@@ -68,14 +72,23 @@
    form input {
       font-size: 1.75rem;
    }
+
+   .collapse {
+      display: none;
+   }
 }
 
-// final mobile font resize
-// padding adjustment to push to edge of screen
+// final mobile font resize (including h1)
+// padding adjustment to push closer to edge of screen
 @media (max-width: 402px) {
    h1 {
-      font-size: 2rem;
+      font-size: 2.5rem;
       text-shadow: 1px 1px $accentDarkPurp;
+      line-height: 2.2rem;
+   }
+
+      .title p {
+      font-size: .8rem;
    }
 
    .results {

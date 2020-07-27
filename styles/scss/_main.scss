@@ -1,7 +1,9 @@
+// stop horizontal scroll bar from appearing during results slide in transition
 body {
    overflow-x: hidden;
 }
 
+// LANDING PAGE GENERAL STYLES ========================================== // 
 main {
    background-color: $primaryBackground;
    min-height: 95vh;
@@ -26,10 +28,17 @@ main {
    }
 }
 
+p {
+   @include fontTypography(1.5rem, $bodyFont, $bodyColour);
+}
+// ====================================================================== // 
+
+// TITLE BOX STYLES ===================================================== // 
 h1 {
    @include fontTypography(4rem, $headerFont, $accentPink);
    text-transform: uppercase;
    text-shadow: 2px 2px $accentDarkPurp;
+   line-height: 3.5rem;
 }
 
 .title {
@@ -38,30 +47,26 @@ h1 {
    border-radius: 20px;
    box-shadow: 5px 5px $accentPink;
    text-align: center;
-   width: 100%;
    padding: 20px;
 
    p {
       color: $accentDarkPurp;
       font-size: 1rem;
-      padding: 10px 0;
+      padding-top: 15px;
       font-weight: 700;
 
       span {
          display: inline-block;
          background: rgba(236, 189, 228, .9);
-         // color: black;
          padding: 1px 7px;
          border-radius: 10px;
          margin-top: 2px;
       }
    }
 }
+// ====================================================================== //
 
-p {
-   @include fontTypography(1.5rem, $bodyFont, $bodyColour);
-}
-
+// USER INPUT FORM STYLES =============================================== //
 form {
    display: flex;
    flex-wrap: wrap;

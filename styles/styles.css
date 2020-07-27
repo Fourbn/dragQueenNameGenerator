@@ -286,6 +286,13 @@ main {
   transition: all .2s;
 }
 
+p {
+  font-size: 1.5rem;
+  font-family: "Source Sans Pro", sans-serif;
+  font-weight: 400;
+  color: #190920;
+}
+
 h1 {
   font-size: 4rem;
   font-family: "Racing Sans One", cursive;
@@ -293,6 +300,7 @@ h1 {
   color: #e32bbf;
   text-transform: uppercase;
   text-shadow: 2px 2px #350052;
+  line-height: 3.5rem;
 }
 
 .title {
@@ -302,14 +310,13 @@ h1 {
   -webkit-box-shadow: 5px 5px #e32bbf;
           box-shadow: 5px 5px #e32bbf;
   text-align: center;
-  width: 100%;
   padding: 20px;
 }
 
 .title p {
   color: #350052;
   font-size: 1rem;
-  padding: 10px 0;
+  padding-top: 15px;
   font-weight: 700;
 }
 
@@ -319,13 +326,6 @@ h1 {
   padding: 1px 7px;
   border-radius: 10px;
   margin-top: 2px;
-}
-
-p {
-  font-size: 1.5rem;
-  font-family: "Source Sans Pro", sans-serif;
-  font-weight: 400;
-  color: #190920;
 }
 
 form {
@@ -372,7 +372,6 @@ form input:focus {
           justify-content: center;
   padding: 40px;
   min-height: 100vh;
-  width: 100%;
   position: absolute;
   bottom: 0;
   left: -120%;
@@ -384,27 +383,12 @@ form input:focus {
 }
 
 .results .displayBox {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
   background-color: #ECBDE4;
   border: 2px solid #e32bbf;
   border-radius: 20px;
   -webkit-box-shadow: 4px 4px #e32bbf;
           box-shadow: 4px 4px #e32bbf;
   text-align: center;
-  height: 100%;
-  width: 100%;
   padding: 25px;
 }
 
@@ -483,10 +467,8 @@ form input:focus {
 }
 
 footer {
-  height: 5vh;
-  width: 100%;
-  text-align: center;
   background-color: #ECBDE4;
+  text-align: center;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -497,6 +479,7 @@ footer {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  height: 5vh;
   margin: 0 auto;
   padding: 5px 0;
 }
@@ -507,11 +490,11 @@ footer p {
 
 @media (max-width: 885px) {
   h1 {
-    font-size: 3rem;
+    font-size: 3.25rem;
   }
 }
 
-@media (max-width: 750px) {
+@media (max-width: 775px) {
   .userInputs input {
     width: 100%;
     padding: 15px;
@@ -528,6 +511,9 @@ footer p {
 }
 
 @media (max-width: 630px) {
+  .title p {
+    font-size: .9rem;
+  }
   .results .displayBox p {
     font-size: 1.5rem;
   }
@@ -553,12 +539,19 @@ footer p {
   form input {
     font-size: 1.75rem;
   }
+  .collapse {
+    display: none;
+  }
 }
 
 @media (max-width: 402px) {
   h1 {
-    font-size: 2rem;
+    font-size: 2.5rem;
     text-shadow: 1px 1px #350052;
+    line-height: 2.2rem;
+  }
+  .title p {
+    font-size: .8rem;
   }
   .results {
     padding: 20px;

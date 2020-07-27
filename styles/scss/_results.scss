@@ -5,27 +5,22 @@
    justify-content: center;
    padding: 40px;
    min-height: 100vh;
-   width: 100%;
+   // hidden positioning of div so it doesn't interfere with landing page
+   // visible positioning class is below @ .resultsSlide
    position: absolute;
-   // top: 0;
    bottom: 0;
    left: -120%;
    right: 120%;
    transition: left .5s, right .5s;
    transition-timing-function: cubic-bezier(.65,-0.33,.44,1.46);
 
+   //box within the results div that displays the users new drag name and house
    .displayBox{
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
       background-color: $secondaryBackground;
       border: 2px solid $accentPink;
       border-radius: 20px;
       box-shadow: 4px 4px $accentPink;
       text-align: center;
-      height: 100%;
-      width: 100%;
       padding: 25px;
 
       p {
@@ -66,6 +61,7 @@
       }
    }
    
+   // form for the new name and go back buttons
    .resultsForm {
       display: flex;
       flex-wrap: wrap;
@@ -79,13 +75,13 @@
    }
 }
 
+// styles that slide in the results 
 .resultsSlide {
    display: flex;
    left: 0;
    right: 0;
    bottom: unset;
    top: 0;
-   // transition: all .5s;
    transition: left .5s, right .5s; 
    transition-timing-function: cubic-bezier(.65,-0.33,.44,1.46);
 }
