@@ -1,3 +1,4 @@
+// import Drag Names and House Names from data file
 import dragData from './data.js'
 
 // Drag Persona Generator App
@@ -14,6 +15,28 @@ dragApp.delayFormHide = () => {
    setTimeout(function(){
       $('.userInputs').addClass('collapse')
    }, 200)
+}
+
+// user inputs their first and last name into two separate inputs and then submits the form
+// ERROR FIXING: ensure that both inputs have at least one letter in them before submitting
+dragApp.errorCatch = (userFirst, userLast) => {
+   const errorMessage = `
+   <div class="displayBox">
+      <p class="errorMessage"> You think you're clever don't you!</p>
+      <p>Even if your name is <span class="elon">X Æ A-12,</span> stick to <span class="warning" title="Please only use letters when typing in your name.">the alphabet.</span></h2>
+      <form action="" class="resultsForm" name="resultsForm">
+         <button class="submitButton" id="refresh" aria-label="Go back to main screen. Please remove any numbers or characters from your name">Do Better</button>
+      </form>
+   </div>
+   `
+   // the display function only goes through if the initials of both inputs matches one of the keys in their respective objects, otherwise it spits out the error message
+   if (dragData.firstNames[userFirst] && dragData.lastNames[userLast]) {
+      dragApp.pullDragName(userFirst, userLast, dragData.house)
+   } else {
+      $('.results').html(errorMessage)
+      $('.results').addClass('resultsSlide')
+      dragApp.delayFormHide();
+   }
 }
 
 // event listener on the submit button that stores the users initials
@@ -45,28 +68,6 @@ dragApp.eventListeners = () => {
    })
 }
 
-// user inputs their first and last name into two separate inputs and then submits the form
-// ERROR FIXING: ensure that both inputs have at least one letter in them before submitting
-dragApp.errorCatch = (userFirst, userLast) => {
-   const errorMessage = `
-   <div class="displayBox">
-      <p class="errorMessage"> You think you're clever don't you!</p>
-      <p>Even if your name is <span class="elon">X Æ A-12,</span> stick to <span class="warning" title="Please only use letters when typing in your name.">the alphabet.</span></h2>
-      <form action="" class="resultsForm" name="resultsForm">
-         <button class="submitButton" id="refresh" aria-label="Go back to main screen. Please remove any numbers or characters from your name">Do Better</button>
-      </form>
-   </div>
-   `
-   // the display function only goes through if the initials of both inputs matches one of the keys in their respective objects, otherwise it spits out the error message
-   if (dragData.firstNames[userFirst] && dragData.lastNames[userLast]) {
-      dragApp.pullDragName(userFirst, userLast, dragData.house)
-   } else {
-      $('.results').html(errorMessage)
-      $('.results').addClass('resultsSlide')
-      dragApp.delayFormHide();
-   }
-}
-
 // function to pull one drag name based on first initial from the available options
 dragApp.pullDragName = (userFirst, userLast) => {
    // using the array of potential drag names (matched to the users intials), find a random index within that array and save to the variable
@@ -91,9 +92,6 @@ dragApp.pullDragHouse = () => {
 }
 
 // display the drag name in a string to the user
-
-// NOTE: New Name button not as clear as I thought it would. Random Name or Better Name.
-// NOTE: Go back button should be on the left side, expect it to be there
 dragApp.displayResults = (firstD, lastD, house) => {
    const displayHTML = `
    <div class="displayBox">
@@ -110,7 +108,6 @@ dragApp.displayResults = (firstD, lastD, house) => {
    $('.results').addClass('resultsSlide')
    dragApp.delayFormHide();
 }
-
 
 dragApp.init = () => {
    dragApp.eventListeners();
