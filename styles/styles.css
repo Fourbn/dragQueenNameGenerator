@@ -488,6 +488,21 @@ footer p {
   font-size: .75rem;
 }
 
+footer a {
+  font-family: "Racing Sans One", cursive;
+  font-size: .85rem;
+  color: #e32bbf;
+  text-decoration: none;
+  padding: 0 7px;
+  display: inline-block;
+  line-height: 1.2rem;
+  border-radius: 10px;
+}
+
+footer a:hover, footer a:focus {
+  background: #98e2f8;
+}
+
 @media (max-width: 885px) {
   h1 {
     font-size: 3.25rem;

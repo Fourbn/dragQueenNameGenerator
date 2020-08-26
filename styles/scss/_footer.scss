@@ -11,4 +11,20 @@ footer {
    p {
       font-size: .75rem;
    }
+
+   a {
+      font-family: $headerFont;
+      font-size: .85rem;
+      color: $accentPink;
+      text-decoration: none;
+      padding: 0 7px;
+      display: inline-block;
+      line-height: 1.2rem;
+      border-radius: 10px;
+
+      &:hover, 
+      &:focus {
+         background: $accentBlue;
+      }
+   }
 }
